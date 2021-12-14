@@ -6,13 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="文字の変更確認!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/avatar1"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="452dp" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/avatar2"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="347dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/avatar3"
+        tools:layout_editor_absoluteX="322dp"
+        tools:layout_editor_absoluteY="66dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/avatar4"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="452dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/avatar5"
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="66dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
