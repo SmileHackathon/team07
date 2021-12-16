@@ -1,6 +1,7 @@
 package com.example.silent_life
 
 
+import android.graphics.Point
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -13,11 +14,15 @@ private var imageView: ImageView? = null
 
 val move: Int = 150//移動量
 
+var array = IntArray(2)
+
 
 class MainActivity : AppCompatActivity() {
 
-    var scounter: Int = 0//縦の移動値
-    var bcounter: Int  = 0//横の移動値
+    var scounter: Int = 0//縦移動の値
+    var bcounter: Int  = 0//横移動の値
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,33 +34,39 @@ class MainActivity : AppCompatActivity() {
         val rbutton =  findViewById<Button>(R.id.rb)//右ボタン
         val lbutton =  findViewById<Button>(R.id.lb)//左ボタン
         imageView = findViewById(R.id.image)
-        //アイコンの移動用変数
-        var left: Int = imageView!!.left
-        var top: Int = imageView!!.top
-        var right: Int = imageView!!.right
-        var bottom: Int = imageView!!.bottom
-//
 
+        //imageView!!.x = 200F
+        //imageView!!.y = 300F
+
+
+        //アイコンの移動用変数
+        var left: Int = 0
+        var top: Int = 0
+        var right: Int = 0
+        var bottom: Int = 0
+        imageView!!.verticalScrollbarPosition
+
+        //fun Window
 
         upbutton.setOnClickListener{//上ボタン
-            scounter -=move;
-            left = bcounter;
-            top = scounter;
-            right = bcounter + imageView!!.getWidth()
-            bottom =  scounter + imageView!!.getHeight()
-            imageView!!.layout(left, top, right, bottom)
-        }
-
-        dwbutton.setOnClickListener{//下ボタン
-            scounter += move;
-            left = bcounter;
+            scounter -=move
+            left = bcounter
             top = scounter
             right = bcounter + imageView!!.getWidth()
             bottom =  scounter + imageView!!.getHeight()
             imageView!!.layout(left, top, right, bottom)
         }
 
-        lbutton.setOnClickListener{//下ボタン
+        dwbutton.setOnClickListener{//下ボタン
+            scounter += move
+            left = bcounter
+            top = scounter
+            right = bcounter + imageView!!.getWidth()
+            bottom =  scounter + imageView!!.getHeight()
+            imageView!!.layout(left, top, right, bottom)
+        }
+
+        lbutton.setOnClickListener{//左ボタン
             bcounter -= move
             left = bcounter
             top = scounter
@@ -64,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             imageView!!.layout(left, top, right, bottom)
         }
 
-        rbutton.setOnClickListener{//下ボタン
+        rbutton.setOnClickListener{//右ボタン
             bcounter += move
             left = bcounter
             top = scounter
