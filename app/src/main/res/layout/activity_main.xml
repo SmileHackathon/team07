@@ -5,7 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/container"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity"
+    >
 
     <Button
         android:id="@+id/upb"
@@ -111,6 +114,65 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.105"
         app:srcCompat="@drawable/avatar2" />
+  
+    //メッセージのテキストエディタ
+    <EditText
+        android:id="@+id/editText"
+        android:hint = "メッセージを入力"
+        android:text = ""
+        android:background="#00000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="657dp" />
 
+    //メッセージの上の枠線
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background = "#696969"
+        />
+
+    //設定ボタン
+    <ImageButton
+        android:id="@+id/settingButton"
+        android:layout_width="30dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="5dp"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        android:src="@drawable/settingbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/line1" />
+
+    //文字を送信するボタン
+    <ImageButton
+        android:id="@+id/sendButton"
+        android:layout_width="30dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="5dp"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        android:src="@drawable/sendbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/line1"
+        android:layout_marginEnd="10dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
