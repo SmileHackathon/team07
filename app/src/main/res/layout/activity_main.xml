@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image"
         android:layout_width="105dp"
         android:layout_height="105dp"
         app:srcCompat="@drawable/avatar1"
@@ -21,7 +21,7 @@
  />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/image1"
         android:layout_width="105dp"
         android:layout_height="105dp"
         app:srcCompat="@drawable/avatar1"
@@ -31,7 +31,7 @@
         android:layout_marginStart="100dp"/>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/image2"
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:layout_marginStart="320dp"
@@ -44,7 +44,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/image3"
         android:layout_width="105dp"
         android:layout_height="105dp"
         app:srcCompat="@drawable/avatar4"
@@ -56,7 +56,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/image4"
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:layout_marginStart="228dp"
