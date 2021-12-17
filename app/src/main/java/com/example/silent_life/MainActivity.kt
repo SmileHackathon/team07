@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        upbutton.setOnClickListener{//上ボタン
+    /*    upbutton.setOnClickListener{//上ボタン
             scounter -=move
             left = bcounter
             top = scounter
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
             right =  bcounter + imageView!!.getWidth()
             bottom = scounter + imageView!!.getHeight()
             imageView!!.layout(left, top, right, bottom)
-        }
+        }*/
 
         val sendButton: ImageButton = findViewById(R.id.sendButton)
 
