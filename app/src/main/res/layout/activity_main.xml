@@ -1,18 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/mon"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/container"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/avatar1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar3" />
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="320dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105"
+        app:srcCompat="@drawable/avatar3"
+
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        app:srcCompat="@drawable/avatar4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="452dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/image4"
+        android:layout_width="105dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="228dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105"
+        app:srcCompat="@drawable/avatar2" />
+  
+    //メッセージのテキストエディタ
+    <EditText
+        android:id="@+id/editText"
+        android:hint = "メッセージを入力"
+        android:text = ""
+        android:background="#00000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="657dp" />
+
+    //メッセージの上の枠線
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background = "#696969"
+        />
+
+    //設定ボタン
+    <ImageButton
+        android:id="@+id/settingButton"
+        android:layout_width="30dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="5dp"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        android:src="@drawable/settingbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/line1" />
+
+    //文字を送信するボタン
+    <ImageButton
+        android:id="@+id/sendButton"
+        android:layout_width="30dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="5dp"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        android:src="@drawable/sendbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/line1"
+        android:layout_marginEnd="10dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
