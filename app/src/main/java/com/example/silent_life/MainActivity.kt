@@ -6,6 +6,7 @@ import android.content.Context
 import android.graphics.Color.RED
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
@@ -57,7 +58,6 @@ class MainActivity : AppCompatActivity() {
         //imageView!!.x = 200F
         //imageView!!.y = 300F
 
-
         //アイコンの移動用変数
         var left: Int = 0
         var top: Int = 0
@@ -74,6 +74,8 @@ class MainActivity : AppCompatActivity() {
             right = bcounter + imageView!!.getWidth()
             bottom =  scounter + imageView!!.getHeight()
             imageView!!.layout(left, top, right, bottom)
+            //画像の位置取得
+            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
         }
 
         dwbutton.setOnClickListener{//下ボタン
@@ -83,6 +85,8 @@ class MainActivity : AppCompatActivity() {
             right = bcounter + imageView!!.getWidth()
             bottom =  scounter + imageView!!.getHeight()
             imageView!!.layout(left, top, right, bottom)
+            //画像の位置取得
+            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
         }
 
         lbutton.setOnClickListener{//左ボタン
@@ -92,6 +96,8 @@ class MainActivity : AppCompatActivity() {
             right =  bcounter + imageView!!.getWidth()
             bottom = scounter + imageView!!.getHeight()
             imageView!!.layout(left, top, right, bottom)
+            //画像の位置取得
+            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
         }
 
         rbutton.setOnClickListener{//右ボタン
@@ -101,6 +107,8 @@ class MainActivity : AppCompatActivity() {
             right =  bcounter + imageView!!.getWidth()
             bottom = scounter + imageView!!.getHeight()
             imageView!!.layout(left, top, right, bottom)
+            //画像の位置取得
+            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
         }
 
         val sendButton: ImageButton = findViewById(R.id.sendButton)
@@ -116,6 +124,9 @@ class MainActivity : AppCompatActivity() {
         editText.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
                 //Perform Code
+                //画像の位置取得
+                Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
+
                 chatCount += 1
                 messages.add(editText.text.toString())
 
@@ -137,7 +148,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     //テキストの中身を空にする
                     editText.text.clear()
-                    balloon.showAlignTop(findViewById(R.id.imageView), 0, 0)
+                    balloon.showAlignTop(findViewById(R.id.image), 0, 0)
 
                 } else if (chatCount == 2) {
                     leaveText()
@@ -157,7 +168,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     //テキストの中身を空にする
                     editText.text.clear()
-                    balloon.showAlignTop(findViewById(R.id.imageView), 0, 0)
+                    balloon.showAlignTop(findViewById(R.id.image), 0, 0)
 
                     val balloon2 = createBalloon(baseContext) {
                         setArrowSize(10)
@@ -173,7 +184,7 @@ class MainActivity : AppCompatActivity() {
 //                        setLifecycleOwner(this@MainActivity)
                         setDismissWhenTouchOutside(false)//キーボードタップで消されない
                     }
-                    balloon2.showAlignTop(findViewById(R.id.imageView), 0, -150)
+                    balloon2.showAlignTop(findViewById(R.id.image), 0, -150)
                 } else if (chatCount == 3) {
                     leaveText()
                     val balloon = createBalloon(baseContext) {
@@ -192,7 +203,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     //テキストの中身を空にする
                     editText.text.clear()
-                    balloon.showAlignTop(findViewById(R.id.imageView), 0, 0)
+                    balloon.showAlignTop(findViewById(R.id.image), 0, 0)
 
                     val balloon2 = createBalloon(baseContext) {
                         setArrowSize(10)
@@ -208,7 +219,7 @@ class MainActivity : AppCompatActivity() {
 //                        setLifecycleOwner(this@MainActivity)
                         setDismissWhenTouchOutside(false)//キーボードタップで消されない
                     }
-                    balloon2.showAlignTop(findViewById(R.id.imageView), 0, -150)
+                    balloon2.showAlignTop(findViewById(R.id.image), 0, -150)
 
                     val balloon3 = createBalloon(baseContext) {
                         setArrowSize(10)
@@ -224,7 +235,7 @@ class MainActivity : AppCompatActivity() {
 //                        setLifecycleOwner(this@MainActivity)
                         setDismissWhenTouchOutside(false)//キーボードタップで消されない
                     }
-                    balloon3.showAlignTop(findViewById(R.id.imageView), 0, -300)
+                    balloon3.showAlignTop(findViewById(R.id.image), 0, -300)
                 } else {
 
                 }
@@ -250,7 +261,7 @@ class MainActivity : AppCompatActivity() {
             }
             //テキストの中身を空にする
             editText.text.clear()
-            balloon.showAlignTop(findViewById(R.id.imageView))
+            balloon.showAlignTop(findViewById(R.id.image))
         }
     }
 
