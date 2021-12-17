@@ -48,11 +48,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         imageView = findViewById(R.id.image)
 
-        //imageView!!.x = 200F
-        //imageView!!.y = 300F
 
         //アイコンの移動用変数
         var left: Int = 0
@@ -63,14 +60,13 @@ class MainActivity : AppCompatActivity() {
 
         val listener = View.OnTouchListener(function = { view, motionEvent ->
             if (motionEvent.action == MotionEvent.ACTION_MOVE){
-                view.y = motionEvent.rawY - view.height / 3
-                view.x = motionEvent.rawX - view.width / 3
+                view.y = motionEvent.rawY - view.height
+                view.x = motionEvent.rawX - view.width / 2
             }
             true
         })
         imageView!!.setOnTouchListener(listener)
 
-    
 
         val sendButton: ImageButton = findViewById(R.id.sendButton)
         val messages = mutableListOf<String>()
