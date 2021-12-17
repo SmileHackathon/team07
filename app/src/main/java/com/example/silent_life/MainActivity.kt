@@ -3,22 +3,18 @@ package com.example.silent_life
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Color.RED
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.ImageView
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.skydoves.balloon.Balloon
 import com.skydoves.balloon.BalloonAnimation
-import com.skydoves.balloon.balloon
 import com.skydoves.balloon.createBalloon
 
 
@@ -31,6 +27,7 @@ val move: Int = 150//移動量
 var array = IntArray(2)
 
 class MainActivity : AppCompatActivity() {
+
     var scounter: Int = 0//縦移動の値
     var bcounter: Int  = 0//横移動の値
     // キーボード表示を制御するためのオブジェクト
@@ -47,6 +44,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         imageView = findViewById(R.id.image)
 
@@ -70,6 +69,127 @@ class MainActivity : AppCompatActivity() {
 
         val sendButton: ImageButton = findViewById(R.id.sendButton)
         val messages = mutableListOf<String>()
+        val messages_d = mutableListOf("やっほー","おつかれー","お昼何食べた？","なんだそれめっちゃ美味そう")
+
+        Handler().postDelayed( {
+            val balloon_d = createBalloon(baseContext) {
+                setArrowSize(10)
+                setWidthRatio(0.5f)
+                setHeight(65)
+                setArrowPosition(0.5f)
+                setCornerRadius(4f)
+                setAlpha(1.0f)
+                setText(messages_d[0])
+                setBackgroundColorResource(R.color.white)
+                setTextColor(R.color.black)
+                setBalloonAnimation(BalloonAnimation.FADE)
+//                        setLifecycleOwner(this@MainActivity)
+                setDismissWhenTouchOutside(false)//キーボードタップで消されない
+            }
+            balloon_d.showAlignTop(findViewById(R.id.image3), 0, 0)
+        },5000)
+
+        Handler().postDelayed( {
+            val balloon_d = createBalloon(baseContext) {
+                setArrowSize(10)
+                setWidthRatio(0.5f)
+                setHeight(65)
+                setArrowPosition(0.5f)
+                setCornerRadius(4f)
+                setAlpha(1.0f)
+                setText(messages_d[1])
+                setBackgroundColorResource(R.color.white)
+                setTextColor(R.color.black)
+                setBalloonAnimation(BalloonAnimation.FADE)
+//                        setLifecycleOwner(this@MainActivity)
+                setDismissWhenTouchOutside(false)//キーボードタップで消されない
+            }
+            balloon_d.showAlignTop(findViewById(R.id.image1), 0, 0)
+        },6000)
+
+        Handler().postDelayed( {
+            val balloon_d1 = createBalloon(baseContext) {
+                setArrowSize(10)
+                setWidthRatio(0.5f)
+                setHeight(65)
+                setArrowPosition(0.5f)
+                setCornerRadius(4f)
+                setAlpha(1.0f)
+                setText(messages_d[2])
+                setBackgroundColorResource(R.color.white)
+                setTextColor(R.color.black)
+                setBalloonAnimation(BalloonAnimation.FADE)
+//                        setLifecycleOwner(this@MainActivity)
+                setDismissWhenTouchOutside(false)//キーボードタップで消されない
+            }
+            balloon_d1.showAlignTop(findViewById(R.id.image3), 0, 0)
+
+            val balloon_d2 = createBalloon(baseContext) {
+                setArrowSize(10)
+                setWidthRatio(0.5f)
+                setHeight(65)
+                setArrowPosition(0.5f)
+                setCornerRadius(4f)
+                setAlpha(1.0f)
+                setText(messages_d[0])
+                setBackgroundColorResource(R.color.white)
+                setTextColor(R.color.black)
+                setBalloonAnimation(BalloonAnimation.FADE)
+//                        setLifecycleOwner(this@MainActivity)
+                setDismissWhenTouchOutside(false)//キーボードタップで消されない
+            }
+            balloon_d2.showAlignTop(findViewById(R.id.image3), 0, -150)
+        },12000)
+
+        Handler().postDelayed( {
+            val balloon_d1 = createBalloon(baseContext) {
+                setArrowSize(10)
+                setWidthRatio(0.5f)
+                setHeight(65)
+                setArrowPosition(0.5f)
+                setCornerRadius(4f)
+                setAlpha(1.0f)
+                setText(messages_d[3])
+                setBackgroundColorResource(R.color.white)
+                setTextColor(R.color.black)
+                setBalloonAnimation(BalloonAnimation.FADE)
+//                        setLifecycleOwner(this@MainActivity)
+                setDismissWhenTouchOutside(false)//キーボードタップで消されない
+            }
+            balloon_d1.showAlignTop(findViewById(R.id.image3), 0, 0)
+
+            val balloon_d2 = createBalloon(baseContext) {
+                setArrowSize(10)
+                setWidthRatio(0.5f)
+                setHeight(65)
+                setArrowPosition(0.5f)
+                setCornerRadius(4f)
+                setAlpha(1.0f)
+                setText(messages_d[2])
+                setBackgroundColorResource(R.color.white)
+                setTextColor(R.color.black)
+                setBalloonAnimation(BalloonAnimation.FADE)
+//                        setLifecycleOwner(this@MainActivity)
+                setDismissWhenTouchOutside(false)//キーボードタップで消されない
+            }
+            balloon_d2.showAlignTop(findViewById(R.id.image3), 0, -150)
+
+            val balloon_d3 = createBalloon(baseContext) {
+                setArrowSize(10)
+                setWidthRatio(0.5f)
+                setHeight(65)
+                setArrowPosition(0.5f)
+                setCornerRadius(4f)
+                setAlpha(1.0f)
+                setText(messages_d[0])
+                setBackgroundColorResource(R.color.white)
+                setTextColor(R.color.black)
+                setBalloonAnimation(BalloonAnimation.FADE)
+//                        setLifecycleOwner(this@MainActivity)
+                setDismissWhenTouchOutside(false)//キーボードタップで消されない
+            }
+            balloon_d3.showAlignTop(findViewById(R.id.image3), 0, -300)
+        },25000)
 
 
         //背景のレイアウトを取得
@@ -106,6 +226,7 @@ class MainActivity : AppCompatActivity() {
                     //テキストの中身を空にする
                     editText.text.clear()
                     balloon.showAlignTop(findViewById(R.id.image), 0, 0)
+
 
                 } else if (chatCount == 2) {
                     leaveText()

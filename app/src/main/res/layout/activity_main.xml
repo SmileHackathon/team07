@@ -25,7 +25,7 @@
         android:layout_width="105dp"
         android:layout_height="105dp"
         android:layout_marginStart="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="450dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avatar3" />
@@ -123,6 +123,15 @@
         app:layout_constraintTop_toTopOf="@+id/line1"
         android:layout_marginEnd="10dp"
         />
+
+    <TextView
+        android:id="@+id/t"
+        android:layout_width="68dp"
+        android:layout_height="36dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="545dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
