@@ -67,8 +67,6 @@ class MainActivity : AppCompatActivity() {
         })
         imageView!!.setOnTouchListener(listener)
 
-    
-    
 
         val sendButton: ImageButton = findViewById(R.id.sendButton)
         val messages = mutableListOf<String>()
