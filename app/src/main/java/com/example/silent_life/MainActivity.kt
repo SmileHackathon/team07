@@ -54,7 +54,16 @@ class MainActivity : AppCompatActivity() {
         var bottom: Int = 0
         imageView!!.verticalScrollbarPosition
 
-        //fun Window
+        val listener = View.OnTouchListener(function = { view, motionEvent ->
+            if (motionEvent.action == MotionEvent.ACTION_MOVE){
+                view.y = motionEvent.rawY - view.height / 3
+                view.x = motionEvent.rawX - view.width / 3
+            }
+            true
+        })
+        imageView!!.setOnTouchListener(listener)
+
+
 
         upbutton.setOnClickListener{//上ボタン
             scounter -=move
