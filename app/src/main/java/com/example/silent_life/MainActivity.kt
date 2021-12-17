@@ -65,9 +65,18 @@ class MainActivity : AppCompatActivity() {
         var bottom: Int = 0
         imageView!!.verticalScrollbarPosition
 
-        //fun Window
+        val listener = View.OnTouchListener(function = { view, motionEvent ->
+            if (motionEvent.action == MotionEvent.ACTION_MOVE){
+                view.y = motionEvent.rawY - view.height / 3
+                view.x = motionEvent.rawX - view.width / 3
+            }
+            true
+        })
+        imageView!!.setOnTouchListener(listener)
 
-        upbutton.setOnClickListener{//上ボタン
+
+
+    /*    upbutton.setOnClickListener{//上ボタン
             scounter -=move
             left = bcounter
             top = scounter
@@ -107,9 +116,13 @@ class MainActivity : AppCompatActivity() {
             right =  bcounter + imageView!!.getWidth()
             bottom = scounter + imageView!!.getHeight()
             imageView!!.layout(left, top, right, bottom)
+            
             //画像の位置取得
             Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
         }
+
+    
+    
 
         val sendButton: ImageButton = findViewById(R.id.sendButton)
         val messages = mutableListOf<String>()
