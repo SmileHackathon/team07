@@ -48,11 +48,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //ボタン認識
-        val upbutton = findViewById<Button>(R.id.upb)//上ボタン
-        val dwbutton = findViewById<Button>(R.id.dwb)//下ボタン
-        val rbutton =  findViewById<Button>(R.id.rb)//右ボタン
-        val lbutton =  findViewById<Button>(R.id.lb)//左ボタン
+
         imageView = findViewById(R.id.image)
 
         //imageView!!.x = 200F
@@ -74,54 +70,6 @@ class MainActivity : AppCompatActivity() {
         })
         imageView!!.setOnTouchListener(listener)
 
-
-
-    /*    upbutton.setOnClickListener{//上ボタン
-            scounter -=move
-            left = bcounter
-            top = scounter
-            right = bcounter + imageView!!.getWidth()
-            bottom =  scounter + imageView!!.getHeight()
-            imageView!!.layout(left, top, right, bottom)
-            //画像の位置取得
-            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
-        }
-
-        dwbutton.setOnClickListener{//下ボタン
-            scounter += move
-            left = bcounter
-            top = scounter
-            right = bcounter + imageView!!.getWidth()
-            bottom =  scounter + imageView!!.getHeight()
-            imageView!!.layout(left, top, right, bottom)
-            //画像の位置取得
-            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
-        }
-
-        lbutton.setOnClickListener{//左ボタン
-            bcounter -= move
-            left = bcounter
-            top = scounter
-            right =  bcounter + imageView!!.getWidth()
-            bottom = scounter + imageView!!.getHeight()
-            imageView!!.layout(left, top, right, bottom)
-            //画像の位置取得
-            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
-        }
-
-        rbutton.setOnClickListener{//右ボタン
-            bcounter += move
-            left = bcounter
-            top = scounter
-            right =  bcounter + imageView!!.getWidth()
-            bottom = scounter + imageView!!.getHeight()
-            imageView!!.layout(left, top, right, bottom)
-            
-            //画像の位置取得
-            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
-        }
-
-    
     
 
         val sendButton: ImageButton = findViewById(R.id.sendButton)
