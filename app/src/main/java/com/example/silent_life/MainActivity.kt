@@ -48,15 +48,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //ボタン認識
-        val upbutton = findViewById<Button>(R.id.upb)//上ボタン
-        val dwbutton = findViewById<Button>(R.id.dwb)//下ボタン
-        val rbutton =  findViewById<Button>(R.id.rb)//右ボタン
-        val lbutton =  findViewById<Button>(R.id.lb)//左ボタン
         imageView = findViewById(R.id.image)
 
-        //imageView!!.x = 200F
-        //imageView!!.y = 300F
 
         //アイコンの移動用変数
         var left: Int = 0
@@ -67,59 +60,12 @@ class MainActivity : AppCompatActivity() {
 
         val listener = View.OnTouchListener(function = { view, motionEvent ->
             if (motionEvent.action == MotionEvent.ACTION_MOVE){
-                view.y = motionEvent.rawY - view.height / 3
-                view.x = motionEvent.rawX - view.width / 3
+                view.y = motionEvent.rawY - view.height
+                view.x = motionEvent.rawX - view.width / 2
             }
             true
         })
         imageView!!.setOnTouchListener(listener)
-
-
-
-    /*    upbutton.setOnClickListener{//上ボタン
-            scounter -=move
-            left = bcounter
-            top = scounter
-            right = bcounter + imageView!!.getWidth()
-            bottom =  scounter + imageView!!.getHeight()
-            imageView!!.layout(left, top, right, bottom)
-            //画像の位置取得
-            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
-        }
-
-        dwbutton.setOnClickListener{//下ボタン
-            scounter += move
-            left = bcounter
-            top = scounter
-            right = bcounter + imageView!!.getWidth()
-            bottom =  scounter + imageView!!.getHeight()
-            imageView!!.layout(left, top, right, bottom)
-            //画像の位置取得
-            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
-        }
-
-        lbutton.setOnClickListener{//左ボタン
-            bcounter -= move
-            left = bcounter
-            top = scounter
-            right =  bcounter + imageView!!.getWidth()
-            bottom = scounter + imageView!!.getHeight()
-            imageView!!.layout(left, top, right, bottom)
-            //画像の位置取得
-            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
-        }
-
-        rbutton.setOnClickListener{//右ボタン
-            bcounter += move
-            left = bcounter
-            top = scounter
-            right =  bcounter + imageView!!.getWidth()
-            bottom = scounter + imageView!!.getHeight()
-            imageView!!.layout(left, top, right, bottom)
-            
-            //画像の位置取得
-            Log.d("ViewSpot", "X:"+imageView!!.x.toString()+"Y:"+imageView!!.y.toString())
-        }
 
     
     
